@@ -17,11 +17,22 @@ namespace Aim_trainer
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int score = 0;
+        private int timeLeft = 30;
+        private Random random = new Random();
+        private DispatcherTimer gameTimer = new DispatcherTimer();
+        private DispatcherTimer targetTimer = new DispatcherTimer();
+
         public MainWindow()
         {
             InitializeComponent();
         }
-        private void StartButton_Click(object sender, RoutedEventArgs e) { }
+
+
+        private void StartButton_Click(object sender, RoutedEventArgs e) {
+            StartGame();
+
+        }
 
         private void StartGame() { }
 
