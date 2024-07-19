@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Aim_trainer
 {
@@ -20,5 +21,18 @@ namespace Aim_trainer
         {
             InitializeComponent();
         }
+        private void StartButton_Click(object sender, RoutedEventArgs e) { }
+
+        private void StartGame() { }
+
+        private void GameTimer_Tick(object sender, EventArgs e) { }
+
+        private void TargetTimer_Tick(object sender, EventArgs e) { }
+
+        private void CreateTarget() { }
+
+        private void Target_MouseDown(object sender, MouseButtonEventArgs e) { }
+
+        private void EndGame() { }
     }
 }
