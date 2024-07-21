@@ -34,7 +34,16 @@ namespace Aim_trainer
 
         }
 
-        private void StartGame() { }
+        private void StartGame() {
+            score = 0;
+            timeLeft = 30;
+            ScoreText.Text = "Score: 0";
+            TimeText.Text = "Time: 30";
+            GameCanvas.Children.Clear();
+            gameTimer.Start();
+            targetTimer.Start();
+            StartButton.IsEnabled = false;
+        }
 
         private void GameTimer_Tick(object sender, EventArgs e) { }
 
@@ -44,6 +53,11 @@ namespace Aim_trainer
 
         private void Target_MouseDown(object sender, MouseButtonEventArgs e) { }
 
-        private void EndGame() { }
+        private void EndGame() {
+            gameTimer.Stop();
+            targetTimer.Stop();
+            MessageBox.Show($"Game Over! Your score: {score}", "Game Over", MessageBoxButton.OK, MessageBoxImage.Information);
+            StartButton.IsEnabled = true;
+        }
     }
 }
