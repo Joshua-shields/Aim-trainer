@@ -26,6 +26,11 @@ namespace Aim_trainer
         public MainWindow()
         {
             InitializeComponent();
+            gameTimer.Interval = TimeSpan.FromSeconds(1);
+            gameTimer.Tick += GameTimer_Tick;
+
+            targetTimer.Interval = TimeSpan.FromSeconds(1); 
+            targetTimer.Tick += TargetTimer_Tick;
         }
 
 
@@ -45,15 +50,51 @@ namespace Aim_trainer
             StartButton.IsEnabled = false;
         }
 
-        private void GameTimer_Tick(object sender, EventArgs e) { }
+        private void GameTimer_Tick(object sender, EventArgs e) {
+            timeLeft--;
+            TimeText.Text = $"Time: {timeLeft}";
+            if (timeLeft <= 0)
+            {
+                EndGame();
+            }
+        }
 
-        private void TargetTimer_Tick(object sender, EventArgs e) { }
+        private void TargetTimer_Tick(object sender, EventArgs e) {
+            CreateTarget();
+        }
 
-        private void CreateTarget() { }
+        private void CreateTarget() {
+            double size = random.Next(20, 50);
+            double x = random.NextDouble() * (GameCanvas.ActualWidth - size);
+            double y = random.NextDouble() * (GameCanvas.ActualHeight - size);
 
-        private void Target_MouseDown(object sender, MouseButtonEventArgs e) { }
+            Ellipse target = new Ellipse
+            {
+                Width = size,
+                Height = size,
+                Fill = Brushes.Red,
+                Stroke = Brushes.Black,
+                StrokeThickness = 2
+            };
 
-        private void EndGame() {
+            Canvas.SetLeft(target, x);
+            Canvas.SetTop(target, y);
+            target.MouseDown += Target_MouseDown;
+
+            GameCanvas.Children.Add(target);
+        }
+
+        private void Target_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (sender is Ellipse target)
+            {
+                GameCanvas.Children.Remove(target);
+                score++;
+                ScoreText.Text = $"Score: {score}";
+            }
+        }
+
+            private void EndGame() {
             gameTimer.Stop();
             targetTimer.Stop();
             MessageBox.Show($"Game Over! Your score: {score}", "Game Over", MessageBoxButton.OK, MessageBoxImage.Information);
