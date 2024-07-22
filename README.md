@@ -8,6 +8,7 @@ Aim Trainer is a simple WPF application designed to help users improve their mou
 - Randomly sized and positioned targets
 - Real-time score tracking
 - Timer display
+- *More features will be added
 
 ## Requirements
 
