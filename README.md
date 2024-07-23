@@ -43,8 +43,8 @@ You can easily customize the game by modifying the following parameters in the `
 - `timeLeft`: Change the initial value to adjust the game duration.
 - `targetTimer.Interval`: Modify to change how frequently new targets appear.
 - `random.Next(20, 50)`: Adjust these values to change the size range of the targets.
+![Screenshot 2024-07-23 at 20 53 48](https://github.com/user-attachments/assets/3de77d49-80cb-4b71-95eb-f2c021d8a3ec)
+![Screenshot 2024-07-23 at 20 54 03](https://github.com/user-attachments/assets/f8e066ea-265c-490f-b8e2-c0bdb8464ce5)
 
-  ![Screenshot 2024-07-22 at 16 38 25](https://github.com/user-attachments/assets/822e38ca-af2b-406f-96b1-72a45def9669)
-  ![Screenshot 2024-07-22 at 16 42 00](https://github.com/user-attachments/assets/64898b06-3183-4fa5-a89a-1c3fd7c65692)
 
 
