@@ -17,11 +17,14 @@ namespace Aim_trainer
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int score = 0;
-        private int timeLeft = 30;
-        private Random random = new Random();
-        private DispatcherTimer gameTimer = new DispatcherTimer();
-        private DispatcherTimer targetTimer = new DispatcherTimer();
+        private int score;
+        private int timeLeft;
+        private readonly Random random = new Random();
+        private readonly DispatcherTimer gameTimer = new DispatcherTimer();
+        private readonly DispatcherTimer targetTimer = new DispatcherTimer();
+        private const int GameDuration = 30;
+        private const double MinTargetSize = 20;
+        private const double MaxTargetSize = 50;
 
         public MainWindow()
         {

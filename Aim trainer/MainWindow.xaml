@@ -4,20 +4,55 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Aim_trainer"
-
-        Title="MainWindow" Height="450" Width="800">
+        mc:Ignorable="d"
+        Title="Aim Trainer" Height="600" Width="800"
+        WindowStartupLocation="CenterScreen"
+        Background="#F0F0F0">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal" Margin="10">
-            <Button x:Name="StartButton" Content="Start Game" Click="StartButton_Click" Width="100" Margin="0,0,10,0"/>
-            <TextBlock x:Name="ScoreText" Text="Score: 0" VerticalAlignment="Center"/>
-            <TextBlock x:Name="TimeText" Text="Time: 30" Margin="20,0,0,0" VerticalAlignment="Center"/>
-        </StackPanel>
+        <Border Grid.Row="0" Background="#2C3E50" Padding="20,10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
 
-        <Canvas x:Name="GameCanvas" Grid.Row="1" Background="LightGray"/>
+                <Button x:Name="StartButton" Content="Start Game" Click="StartButton_Click" 
+                        Width="120" Height="40" 
+                        Background="#27AE60" Foreground="White"
+                        FontSize="16" FontWeight="Bold"
+                        BorderThickness="0">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock x:Name="ScoreText" Text="Score: 0" 
+                               VerticalAlignment="Center" 
+                               Foreground="White" FontSize="24" FontWeight="Bold"
+                               Margin="0,0,20,0"/>
+                    <TextBlock x:Name="TimeText" Text="Time: 30" 
+                               VerticalAlignment="Center" 
+                               Foreground="White" FontSize="24" FontWeight="Bold"/>
+                </StackPanel>
+
+                <TextBlock Grid.Column="2" Text="Aim Trainer" 
+                           VerticalAlignment="Center" 
+                           Foreground="#3498DB" FontSize="28" FontWeight="Bold"/>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Background="#ECF0F1" Margin="20"
+                BorderBrush="#BDC3C7" BorderThickness="2" CornerRadius="10">
+            <Canvas x:Name="GameCanvas"/>
+        </Border>
     </Grid>
 </Window>
