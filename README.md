@@ -1,1 +1,50 @@
-# Aim trainer
+# Aim Trainer
+
+Aim Trainer is a simple WPF application designed to help users improve their mouse accuracy and speed. Players click on randomly appearing targets within a time limit to score points.
+
+## Features
+
+- 30-second gameplay sessions
+- Randomly sized and positioned targets
+- Real-time score tracking
+- Timer display
+- *More features will be added
+
+## Requirements
+
+- Windows operating system
+- .NET Framework 4.5 or higher
+- Visual Studio 2015 or later (for development)
+
+## Installation
+
+1. Clone the repository or download the source code.
+2. Open the solution file (`Aim_trainer.sln`) in Visual Studio.
+3. Build the solution (press F6 or use Build > Build Solution).
+4. Run the application (press F5 or use Debug > Start Debugging).
+
+## How to Play
+
+1. Launch the application.
+2. Click the "Start Game" button to begin a new game.
+3. Click on the red circular targets as they appear on the screen.
+4. Try to click as many targets as possible within the 30-second time limit.
+5. Your final score will be displayed when the time runs out.
+
+## Code Structure
+
+- `MainWindow.xaml`: Contains the UI layout for the game window.
+- `MainWindow.xaml.cs`: Contains the game logic, including target creation, score tracking, and timer management.
+
+## Customization
+
+You can easily customize the game by modifying the following parameters in the `MainWindow.xaml.cs` file:
+
+- `timeLeft`: Change the initial value to adjust the game duration.
+- `targetTimer.Interval`: Modify to change how frequently new targets appear.
+- `random.Next(20, 50)`: Adjust these values to change the size range of the targets.
+
+  ![Screenshot 2024-07-22 at 16 38 25](https://github.com/user-attachments/assets/822e38ca-af2b-406f-96b1-72a45def9669)
+  ![Screenshot 2024-07-22 at 16 42 00](https://github.com/user-attachments/assets/64898b06-3183-4fa5-a89a-1c3fd7c65692)
+
+
