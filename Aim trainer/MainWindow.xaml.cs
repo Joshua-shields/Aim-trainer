@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Windows;
+using System.Windows.Automation;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -85,6 +86,19 @@ namespace Aim_trainer
             target.MouseDown += Target_MouseDown;
 
             GameCanvas.Children.Add(target);
+        }
+
+        public void percenthit(object sender, EventArgs) {
+            // take the percent of target hit and display how acurate the user is 
+            // when the target is hit should be displayed in  a window 
+        }
+
+        public void diffuclty(object sender, EventArgs e) {
+            GameCanvas ();
+            targetTimer.Start();
+
+        // change the speed of how fast the targets spawn if extreme is selected then it needs to be 90 targets in 
+        // 30 second also need to change timeing of the countdown
         }
 
         private void Target_MouseDown(object sender, MouseButtonEventArgs e)
