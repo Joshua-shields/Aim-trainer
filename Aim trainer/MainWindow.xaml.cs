@@ -54,6 +54,7 @@ namespace Aim_trainer
             StartButton.IsEnabled = false;
         }
 
+
         private void GameTimer_Tick(object sender, EventArgs e) {
             timeLeft--;
             TimeText.Text = $"Time: {timeLeft}";
